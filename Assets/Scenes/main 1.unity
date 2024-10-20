@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 1619297443}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: flor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -3825,27 +3825,15 @@ GameObject:
   - component: {fileID: 5962506489149248905}
   - component: {fileID: 5962506489139903465}
   - component: {fileID: 5702159890706520590}
+  - component: {fileID: 5962506489149278638}
   - component: {fileID: 5962506489149278636}
-  - component: {fileID: 5962506489149278634}
   m_Layer: 0
   m_Name: Unity_Chan_humanoid
-  m_TagString: Untagged
+  m_TagString: Charactor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5962506489149278634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5962506489149278633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c419a6ce6877644955c41ef27fc0db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5962506489149278635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3902,6 +3890,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5962506489149278638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962506489149278633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c419a6ce6877644955c41ef27fc0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 465568488}
+  Select: 0
 --- !u!1 &5962506489149278639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,7 +3916,7 @@ GameObject:
   - component: {fileID: 5962506489144067373}
   m_Layer: 0
   m_Name: unitychan_face
-  m_TagString: Untagged
+  m_TagString: Charactor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

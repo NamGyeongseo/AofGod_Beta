@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - flor
-  - Charactor
+  - Character
+  - Object
+  - Floor
+  - Furniture
   layers:
   - Default
   - TransparentFX
