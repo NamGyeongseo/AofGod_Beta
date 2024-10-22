@@ -7,7 +7,6 @@ TagManager:
   - Character
   - Object
   - Floor
-  - Furniture
   layers:
   - Default
   - TransparentFX
