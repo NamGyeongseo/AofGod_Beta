@@ -1,30 +1,36 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class UI_Gauge : MonoBehaviour
 {
-    // 싱글턴 인스턴스 설정
-    public static UI_Gauge Instance { get; private set; }
+    public Image gauge; // UI 슬라이더
+    public TMP_Text gaugeText;
+    public Character_2 character; // Character_2 참조
 
-    // 게이지 및 텍스트 UI 요소 참조
-    public Image gauge; // 채워지는 이미지(게이지)
-    public TextMeshProUGUI gaugeText; // 진행률 텍스트
-
-    private void Awake()
+    void Start()
     {
+        if (character != null)
+        {
+            // Character_2의 OnProgressChanged 이벤트에 대한 핸들러 등록
+            character.OnProgressChanged += UpdateProgress;
+        }
     }
 
-    private void Start()
+    void UpdateProgress()
     {
-        // 초기 진행률 설정
-        SetGauge(0f);
+        // Character_2에서 currentProgress 값 비율로 슬라이더 업데이트
+        float progress = character.GetProgress(); // GetProgress 메소드 사용
+        gauge.fillAmount = progress; // 슬라이더 값 설정
+        gaugeText.text = progress.ToString() ;
     }
 
-    // 진행률을 설정하는 메서드
-    public void SetGauge(float progress)
+    void OnDestroy()
     {
-        gauge.fillAmount = progress; // 이미지의 채워진 정도를 설정 (0~1 사이 값)
-        gaugeText.text = $"{(progress * 100):0}%"; // 진행률을 텍스트로 표시 (예: 75%)
+        // 오브젝트가 파괴될 때 이벤트 핸들러 제거
+        if (character != null)
+        {
+            character.OnProgressChanged -= UpdateProgress;
+        }
     }
 }

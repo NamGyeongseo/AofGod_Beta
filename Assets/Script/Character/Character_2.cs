@@ -83,17 +83,22 @@ public class Character_2 : MonoBehaviour
         
     }
 
-   // public float GetProgress()
-   // {
-  //      return currentProgress / maxProgress;
-   // }
+    // public float GetProgress()
+    // {
+    //      return currentProgress / maxProgress;
+    // }
     // 업무 실행 시 진행률을 업데이트
     public void ExecuteTask(float amount)
     {
-        
         currentProgress += amount;
         currentProgress = Mathf.Clamp(currentProgress, 0, maxProgress); // 0에서 100%로 제한
         Debug.Log(amount);
-        UI_Gauge.Instance.SetGauge(currentProgress);
+
+        // 진행률이 변경되었음을 알리기 위해 이벤트 호출
+        OnProgressChanged?.Invoke();
+    }
+    public float GetProgress()
+    {
+        return currentProgress / maxProgress;
     }
 }
