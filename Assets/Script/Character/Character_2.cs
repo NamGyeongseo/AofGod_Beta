@@ -10,8 +10,17 @@ public class Character_2 : MonoBehaviour
     private float maxProgress = 100f;
     private static float currentProgress = 0f;
 
-    float DeskWork = 5f;
-    float FlowerWork = 2f;
+    [SerializeField]
+    private FurnitureData furnitureData;
+    public FurnitureData FurnitureData { set { furnitureData = value; } } 
+
+    
+
+    /*public void WatchObjectInfo()
+    {
+        Debug.Log("오브젝트 이름 :: " + furnitureData.FurnitureName);
+        Debug.Log("오브젝트 업무량 :: " + furnitureData.WorkRange);
+    }*/
 
     public NavMeshAgent agent; // 에이전트의 정보를 얻음
     Animator anim;
@@ -62,15 +71,23 @@ public class Character_2 : MonoBehaviour
         gameObject.transform.position = hit_fir.point;
         gameObject.transform.rotation = hit_fir.transform.rotation;
 
-        if (hit_fir.collider.gameObject.tag =="Desk_1")
-        {
-            ExecuteTask(DeskWork);
-            Invoke("Work_End", 10f);
-        }
+        // 가구 객체에 있는 FurnitureManager에서 FurnitureData를 가져옴
+        
+
+        
         if (hit_fir.collider.gameObject.tag == "Flower_1")
         {
-            ExecuteTask(FlowerWork);
+            int furniture = hit_fir.collider.gameObject.GetComponent<Furniture>().Work;
+            Debug.Log(furnitureData);
+            ExecuteTask(furniture);
             Invoke("Work_End", 5f);
+        }
+        if (hit_fir.collider.gameObject.tag == "Desk_1")
+        {
+            int furniture = hit_fir.collider.gameObject.GetComponent<Furniture>().Work;
+            Debug.Log(furnitureData);
+            ExecuteTask(furniture);
+            Invoke("Work_End", 10f);
         }
     }
 
