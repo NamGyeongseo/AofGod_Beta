@@ -11,6 +11,7 @@ public class FurnitureData : ScriptableObject
     private int workRange;
     public int WorkRange { get { return workRange; } }
 
-
+    public Sprite icon;
+    
 
 }

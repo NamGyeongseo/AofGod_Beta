@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Desk
   m_EditorClassIdentifier: 
   furnitureName: Desk
-  workRange: 5
+  workRange: 40
+  icon: {fileID: 21300000, guid: 3e3215aaa4fe87745bafc66783577863, type: 3}

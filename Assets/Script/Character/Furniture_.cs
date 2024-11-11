@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Furniture : MonoBehaviour
+public class Furniture_: MonoBehaviour
 {
     [SerializeField]
     private FurnitureData furnitureData;

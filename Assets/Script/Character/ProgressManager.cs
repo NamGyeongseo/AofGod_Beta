@@ -8,6 +8,7 @@ public class ProgressManager : MonoBehaviour
     public Image gauge; // UI 슬라이더 참조
     public TMP_Text gaugeText;
     public List<Character_2> characters; // 캐릭터 리스트
+    public GameObject finish;
 
     private float maxTotalProgress = 100f;
 
@@ -34,6 +35,11 @@ public class ProgressManager : MonoBehaviour
         // 합산된 진행률을 슬라이더에 반영
         gauge.fillAmount = (currentTotalProgress /maxTotalProgress);
         gaugeText.text = ((currentTotalProgress / maxTotalProgress) * 100).ToString() + "%"; // 슬라이더 값 설정
+        if ( currentTotalProgress >= maxTotalProgress)
+        {
+            Debug.Log("progress is 100");
+            finish.SetActive(true);
+        }
         //gaugeText.text = progress.ToString();
 
     }

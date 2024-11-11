@@ -77,14 +77,14 @@ public class Character_2 : MonoBehaviour
         
         if (hit_fir.collider.gameObject.tag == "Flower_1")
         {
-            int furniture = hit_fir.collider.gameObject.GetComponent<Furniture>().Work;
+            int furniture = hit_fir.collider.gameObject.GetComponent<Furniture_>().Work;
             Debug.Log(furnitureData);
             ExecuteTask(furniture);
             Invoke("Work_End", 5f);
         }
         if (hit_fir.collider.gameObject.tag == "Desk_1")
         {
-            int furniture = hit_fir.collider.gameObject.GetComponent<Furniture>().Work;
+            int furniture = hit_fir.collider.gameObject.GetComponent<Furniture_>().Work;
             Debug.Log(furnitureData);
             ExecuteTask(furniture);
             Invoke("Work_End", 10f);

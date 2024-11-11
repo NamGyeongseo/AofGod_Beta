@@ -6,14 +6,17 @@ public class UI_Gauge : MonoBehaviour
 {
     public Image gauge; // UI 슬라이더
     public TMP_Text gaugeText;
+    public GameObject Finish;
     public Character_2 character; // Character_2 참조
 
     void Start()
     {
+       
         if (character != null)
         {
             // Character_2의 OnProgressChanged 이벤트에 대한 핸들러 등록
             character.OnProgressChanged += UpdateProgress;
+            
         }
     }
 
@@ -23,6 +26,11 @@ public class UI_Gauge : MonoBehaviour
         float progress = character.GetProgress(); // GetProgress 메소드 사용
         gauge.fillAmount = progress; // 슬라이더 값 설정
         gaugeText.text = progress.ToString() ;
+        if (progress ==1)
+        {
+            Debug.Log("progress is 100");
+            Finish.SetActive(true);
+        }
     }
 
     void OnDestroy()
