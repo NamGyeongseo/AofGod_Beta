@@ -26,11 +26,7 @@ public class UI_Gauge : MonoBehaviour
         float progress = character.GetProgress(); // GetProgress 메소드 사용
         gauge.fillAmount = progress; // 슬라이더 값 설정
         gaugeText.text = progress.ToString() ;
-        if (progress ==1)
-        {
-            Debug.Log("progress is 100");
-            Finish.SetActive(true);
-        }
+    
     }
 
     void OnDestroy()
